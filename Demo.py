@@ -34,15 +34,15 @@ for pg in quote_page:
 
 
 
-    data.append((name, price,openPrice))
+    data.append((name, price))
 
 
 
 # open a csv file with append, so old data will not be srased
 with open('index.csv', 'a') as csv_file:
     writer = csv.writer(csv_file)
-    for name,price,openPrice in data:
-        writer.writerow([name, price,openPrice, datetime.now()])
+    for name,price in data:
+        writer.writerow([name, price, datetime.now()])
 
 
 
